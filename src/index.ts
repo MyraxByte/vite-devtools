@@ -15,7 +15,10 @@ export default {
     DEVTOOLS_ELEMENT_TOGGLE_ID,
     DEVTOOLS_ELEMENT_WINDOW_ID,
     DEVTOOLS_ELEMENT_ID,
-    ViteDevtools
+    ViteDevtools,
+    ViteDevtoolsToggle,
+    ViteDevtoolsWindow,
+    ViteDevtoolsAppRoot
 }
 
 export {
@@ -23,4 +26,7 @@ export {
     DEVTOOLS_ELEMENT_WINDOW_ID,
     DEVTOOLS_ELEMENT_ID,
     ViteDevtools,
+    ViteDevtoolsToggle,
+    ViteDevtoolsWindow,
+    ViteDevtoolsAppRoot
 }

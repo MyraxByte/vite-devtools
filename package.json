@@ -1,0 +1,35 @@
+{
+	"name": "@vite-plugins/devtools",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Anton Ryuben",
+	"license": "MIT",
+	"keywords": [
+		"vite-devtools",
+		"vite-devtools-plugin",
+		"vite-plugin-devtools"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+		"./*": "./*"
+	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"*.d.ts",
+		"dist"
+	],
+	"scripts": {
+		"build": "unbuild",
+		"stub": "unbuild --stub"
+	},
+	"devDependencies": {
+		"unbuild": "^2.0.0"
+	}
+}

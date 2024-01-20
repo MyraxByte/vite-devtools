@@ -1,5 +1,5 @@
 {
-	"name": "@vite-plugins/devtools",
+	"name": "@vite-libs/devtools",
 	"type": "module",
 	"version": "1.0.0",
 	"description": "",
@@ -8,7 +8,10 @@
 	"keywords": [
 		"vite-devtools",
 		"vite-devtools-plugin",
-		"vite-plugin-devtools"
+		"vite-plugin-devtools",
+		"vite-libs",
+		"vite",
+		"vite-plugin"
 	],
 	"exports": {
 		".": {
@@ -22,12 +25,10 @@
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"files": [
-		"*.d.ts",
 		"dist"
 	],
 	"scripts": {
-		"build": "unbuild",
-		"stub": "unbuild --stub"
+		"build": "unbuild --minify"
 	},
 	"devDependencies": {
 		"unbuild": "^2.0.0"

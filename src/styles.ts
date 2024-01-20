@@ -47,8 +47,8 @@ export function getGlobalStyles() {
       height: 40px;
       overflow: hidden;
       pointer-events: auto;
-      background: linear-gradient(180deg, #13151a 0%, rgba(19, 21, 26, 0.88) 100%);
-      border: 1px solid #343841;
+      background: #161618;
+      border: 1px solid #1b1b1f;
       border-radius: 9999px;
       box-shadow: 0px 0px 0px 0px rgba(19, 21, 26, 0.3),
         0px 1px 2px 0px rgba(19, 21, 26, 0.29),
@@ -84,7 +84,7 @@ export function getGlobalStyles() {
     }
 
     #vite-devtools-toolbar #vite-devtools-toolbar-container .item:hover, #vite-devtools-toolbar #vite-devtools-toolbar-container .item:focus-visible {
-      background: #FFFFFF20;
+      background: #202127;
       cursor: pointer;
       outline-offset: -3px;
     }
@@ -103,17 +103,18 @@ export function getGlobalStyles() {
       padding-right: 4px;
     }
     #vite-devtools-toolbar #vite-devtools-toolbar-container .item.active {
-      background: rgba(71, 78, 94, 1);
+      background: #32363f;
+      color: #9499ff;
     }
 
     #vite-devtools-toolbar .item-tooltip {
-      background: linear-gradient(0deg, #13151A, #13151A), linear-gradient(0deg, #343841, #343841);
-      border: 1px solid rgba(52, 56, 65, 1);
+      background: #161618;
+      border: 1px solid #1b1b1f;
       border-radius: 4px;
       padding: 4px 8px;
       position: absolute;
       top: -38px;
-      font-size: 14px;
+      font-size: 13px;
       opacity: 0;
       transition: opacity 0.2s ease-in-out 0s;
       pointer-events: none;
@@ -126,7 +127,7 @@ export function getGlobalStyles() {
       bottom: -6px;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 5px solid #343841;
+      border-top: 5px solid #161618;
     }
 
     #vite-devtools-toolbar .item:hover .item-tooltip, #vite-devtools-toolbar .item:not(.active):focus-visible .item-tooltip {
@@ -142,7 +143,7 @@ export function getGlobalStyles() {
     }
 
     #vite-devtools-toolbar #vite-devtools-toolbar-container .item.active .notification {
-      border-color: rgba(71, 78, 94, 1);
+      border-color: #1b1b1f;
     }
 
     #vite-devtools-toolbar .item .icon {
@@ -173,8 +174,8 @@ export function getGlobalStyles() {
       width: 8px;
       height: 8px;
       border-radius: 9999px;
-      border: 1px solid rgba(19, 21, 26, 1);
-      background: #B33E66;
+      border: 1px solid #1b1b1f;
+      background: #b33e48;
     }
 
     #dev-toolbar-root:not([data-no-notification]) #vite-devtools-toolbar .item .notification[data-active] {
@@ -187,7 +188,7 @@ export function getGlobalStyles() {
     }
 
     #vite-devtools-toolbar .separator {
-      background: rgba(52, 56, 65, 1);
+      background: #1b1b1f;
       width: 1px;
     }
   </style>
@@ -215,7 +216,6 @@ export function getWindowStyles() {
       width: min(640px, 100%);
       max-height: 480px;
       border-radius: 12px;
-      padding: 24px;
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       color: #bfc1c9ff;
       position: fixed;

@@ -246,8 +246,8 @@ export class ViteDevtools extends HTMLElement {
                 })
             );
         });
-        if (import.meta as any) {
-            (import.meta as any).send(`vite-devtools:${app.id}:toggled`, { state: app.active });
+        if ((import.meta as any).hot) {
+            (import.meta as any).hot.send(`vite-devtools:${app.id}:toggled`, { state: app.active });
         }
 
         return true;
@@ -327,7 +327,7 @@ export class ViteDevtoolsToggle extends HTMLElement {
         this.shadowRoot = this.attachShadow({ mode: "open" });
         this.input = document.createElement("input");
     }
-    
+
     connectedCallback() {
         this.shadowRoot.innerHTML = getToggleStyles();
         this.input.type = "checkbox";

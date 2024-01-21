@@ -1,6 +1,7 @@
-import { getAppRootStyles, getGlobalStyles, getToggleStyles, getWindowStyles } from './styles';
+import { DEVTOOLS_APP_ROOT_ELEMENT_ID } from './components/AppRoot';
+import { getGlobalStyles } from './styles';
 
-interface ViteDevtoolsApp {
+export interface ViteDevtoolsApp {
     id: string;
     active?: boolean;
     name: string;
@@ -14,6 +15,8 @@ interface ViteDevtoolsApp {
     init?: (shadowRoot: ShadowRoot, eventTarget: EventTarget) => Promise<void>;
     beforeTogglingOff?: (shadowRoot: ShadowRoot) => Promise<boolean>;
 }
+
+export const DEVTOOLS_ELEMENT_ID = "vite-devtools";
 
 export class ViteDevtools extends HTMLElement {
     private delayTimeout: number;
@@ -58,7 +61,7 @@ export class ViteDevtools extends HTMLElement {
         this.attachEvents();
 
         this.apps.forEach((app) => {
-            const appCanvas = document.createElement("vite-devtools-toolbar-app");
+            const appCanvas = document.createElement(DEVTOOLS_APP_ROOT_ELEMENT_ID);
             appCanvas.dataset.appId = app.id;
             this.shadowRoot?.append(appCanvas);
         });
@@ -201,7 +204,7 @@ export class ViteDevtools extends HTMLElement {
     }
 
     private getAppRootById(id) {
-        return this.shadowRoot.querySelector(`vite-devtools-toolbar-app[data-app-id="${id}"]`) as HTMLElement;
+        return this.shadowRoot.querySelector(`${DEVTOOLS_APP_ROOT_ELEMENT_ID}[data-app-id="${id}"]`) as HTMLElement;
     }
 
     private async toggleAppStatus(app: any) {
@@ -292,52 +295,4 @@ export class ViteDevtools extends HTMLElement {
     }
 }
 
-export class ViteDevtoolsAppRoot extends HTMLElement {
-    public shadowRoot: ShadowRoot;
-    constructor() {
-        super();
-        this.shadowRoot = this.attachShadow({ mode: "open" });
-    }
-    connectedCallback() {
-        this.shadowRoot.innerHTML = getAppRootStyles();
-    }
-}
 
-export class ViteDevtoolsWindow extends HTMLElement {
-    public shadowRoot: ShadowRoot;
-    constructor() {
-        super();
-        this.shadowRoot = this.attachShadow({ mode: "open" });
-    }
-
-    connectedCallback() {
-        this.shadowRoot.innerHTML = `
-            ${getWindowStyles()}
-          <slot />
-        `;
-    }
-}
-
-export class ViteDevtoolsToggle extends HTMLElement {
-    public shadowRoot: ShadowRoot;
-    public input: HTMLInputElement;
-
-    constructor() {
-        super();
-        this.shadowRoot = this.attachShadow({ mode: "open" });
-        this.input = document.createElement("input");
-    }
-
-    connectedCallback() {
-        this.shadowRoot.innerHTML = getToggleStyles();
-        this.input.type = "checkbox";
-        this.shadowRoot.append(this.input);
-    }
-
-    get value() {
-        return this.input.value;
-    }
-    set value(val) {
-        this.input.value = val;
-    }
-}

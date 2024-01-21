@@ -1,8 +1,8 @@
 {
 	"name": "@vite-libs/devtools",
 	"type": "module",
-	"version": "1.0.1",
-	"description": "",
+	"version": "1.0.7",
+	"description": "Vite Devtools Plugin",
 	"author": "Anton Ryuben",
 	"license": "MIT",
 	"keywords": [

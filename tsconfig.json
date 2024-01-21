@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
+
     /* Linting */
     "strict": true,
     "strictNullChecks": true,
@@ -20,15 +21,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
   },
   "include": ["src/**/*"],
-  "exclude": ["**/dist/**", "**/node_modules/**"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "exclude": ["**/dist/**", "**/node_modules/**"]
 }

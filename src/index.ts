@@ -4,10 +4,10 @@ import { ViteDevtoolsPopup, DEVTOOLS_POPUP_ELEMENT_ID } from "./components/Popup
 import { ViteDevtoolsAppRoot, DEVTOOLS_APP_ROOT_ELEMENT_ID } from "./components/AppRoot";
 
 // Custom Elements
-customElements.define(DEVTOOLS_ELEMENT_ID, ViteDevtools);
+customElements.define(DEVTOOLS_APP_ROOT_ELEMENT_ID, ViteDevtoolsAppRoot);
 customElements.define(DEVTOOLS_TOGGLE_ELEMENT_ID, ViteDevtoolsToggle);
 customElements.define(DEVTOOLS_POPUP_ELEMENT_ID, ViteDevtoolsPopup);
-customElements.define(DEVTOOLS_APP_ROOT_ELEMENT_ID, ViteDevtoolsAppRoot);
+customElements.define(DEVTOOLS_ELEMENT_ID, ViteDevtools);
 
 const devtools = document.querySelector(DEVTOOLS_ELEMENT_ID) as ViteDevtools ?? document.createElement(DEVTOOLS_ELEMENT_ID) as ViteDevtools;
 
